@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package queryDouBanID;
+
+// The greeting service definition.
+service QueryID {
+  // Sends a query
+  rpc Query (IsbnRequest) returns (IdUrlReply) {}
+}
+
+// The request message containing the isbn.
+message IsbnRequest {
+  string isbn = 1;
+}
+
+// The response message containing the DouBan url.
+message IdUrlReply {
+  string url = 1;
+}
