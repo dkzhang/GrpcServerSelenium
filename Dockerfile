@@ -5,13 +5,13 @@ FROM python:3.7
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-COPY ./app /app
-
-# Generate grpc file
-RUN python -m grpc_tools.protoc -I./ --python_out=. --grpc_python_out=. ./the.proto
+COPY /app /app
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
+
+# Generate grpc file
+RUN python -m grpc_tools.protoc -I./ --python_out=. --grpc_python_out=. ./the.proto
 
 # Make port 80 available to the world outside this container
 EXPOSE 50051
