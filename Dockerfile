@@ -8,7 +8,7 @@ WORKDIR /app
 COPY ./app /app
 
 # Generate grpc file
-RUN python -m grpc_tools.protoc -I./protos --python_out=. --grpc_python_out=. ./protos/the.proto
+RUN python -m grpc_tools.protoc -I./ --python_out=. --grpc_python_out=. ./the.proto
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
