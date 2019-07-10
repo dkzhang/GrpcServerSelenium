@@ -11,7 +11,7 @@ def run():
     # NOTE(gRPC Python Team): .close() is possible on a channel and should be
     # used in circumstances in which the with statement does not fit the needs
     # of the code.
-    with grpc.insecure_channel('localhost:50051') as channel:
+    with grpc.insecure_channel('dk.gribgp.com:50051') as channel:
         stub = the_pb2_grpc.QueryIDStub(channel)
         response = stub.Query(the_pb2.IsbnRequest(isbn='920910201209'))
         print("Greeter client received: " + response.url)

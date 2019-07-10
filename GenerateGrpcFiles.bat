@@ -1,3 +1,3 @@
-python -m grpc_tools.protoc -I./protos --python_out=. --grpc_python_out=. ./protos/the.proto
+python3 -m grpc_tools.protoc -I./app --python_out=. --grpc_python_out=. ./app/the.proto
 
 pause
